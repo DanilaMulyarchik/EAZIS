@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles.css">
+    <title>Загрузка PDF</title>
+</head>
+<body>
+    <h1>Загрузка PDF-документа</h1>
+    <form action="/analyze" enctype="multipart/form-data" method="post">
+        <label for="file">Выберите PDF файл:</label>
+        <input type="file" id="file" name="file" accept=".pdf" required>
+        <br><br>
+        <button type="submit">Загрузить и проанализировать</button>
+    </form>
+</body>
+</html>

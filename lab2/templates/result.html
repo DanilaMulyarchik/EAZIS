@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles.css">
+    <title>Результаты анализа</title>
+</head>
+<body>
+    <h1>Результаты анализа PDF</h1>
+    <h2>Частотный анализ</h2>
+    <h3>Топ-10 самых частых слов:</h3>
+    <ul>
+        {% for word, freq in word_freq %}
+        <li>{{ word }}: {{ freq }}</li>
+        {% endfor %}
+    </ul>
+    <p>Язык на основе частотного анализа - {{ language_word_freq }}</p>
+
+    <h3>Короткие слова (<= {{ size }} символов):</h3>
+    <ul>
+        {% for word in short_words %}
+        <li>{{ word }}</li>
+        {% endfor %}
+    </ul>
+    <p>Язык на основе анализа коротких слов - {{ language_short_word }}</p>
+    <h2>Нейросетевой анализ:</h2>
+    <p>Язык на основе нейросетевого анализа - {{ nn_result }}</p>
+
+    <h2>Время затраченное на анализ текста:</h2>
+    <p> {{ time }} c</p>
+    <a href="/">Вернуться к загрузке нового файла</a>
+    <br><br>
+</body>
+</html>
